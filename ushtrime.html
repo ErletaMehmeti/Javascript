@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //kjo klase do te perfaqsoj nje abstraksion te pergjithshem te nje mjeti 
+        //kjo klase duhet te permbaje atributin privat shpejtesia dhe kapaciteti
+        //duhet te implementohet nje funksion abstrakt kalkuloNafeten qe do te llogarit
+        //hargjimet e naftes.Ky funksion do te jete i detyrueshem per te implementuar nga klasat femije
+        /* class Mjeti{
+            constructor(shpejtesia,kapaciteti){
+                this._shpejtesia=shpejtesia;
+                this._kapaciteti=kapaciteti;
+            }
+         kalkuloNafeten() {
+        console.log('kalkuloNafeten duhet te implementohet nga klasa femije');
+    }
+}
+
+class Makina extends Mjeti {
+    constructor(shpejtesia, kapaciteti, konsumNaftes) {
+        super(shpejtesia, kapaciteti);
+        this._konsumNaftes = konsumNaftes; 
+    }
+}
+
+let makina = new Makina(120, 5, 0.08);//shpejtsia,kapaciteti,konsumi tri parametrat 
+console.log(`Harxhimi i naftes: ${makina.kalkuloNafeten(150)} litra`);*/
+
+//perdor metodat get dhe set per atributet private,per shpejtesin dhe kapacitetin
+//kontrollo vlerat te caktuara kur perdor set p.sh shpejtesia e as kapaciteti nuk mund te jene negative  
+class Mjeti {
+    constructor(shpejtesia, kapaciteti) {
+        this._shpejtesia = shpejtesia;
+        this._kapaciteti = kapaciteti;
+    }
+
+    get shpejtesia() {
+        return this._shpejtesia;
+    }
+
+    set shpejtesia(vlera) {
+        if (vlera < 0) {
+            console.log("Shpejtesia nuk mun me kane negative");
+        } else {
+            this._shpejtesia = vlera;
+        }
+    }
+    get kapaciteti() {
+        return this._kapaciteti;
+    }
+
+    set kapaciteti(vlera) {
+        if (vlera < 0) {
+            console.log("Kapaciteti nuk mun me kane negativ!");
+        } else {
+            this._kapaciteti = vlera;
+        }
+    }
+
+    kalkuloNafeten() {
+        console.log('kalkuloNafeten duhet me u implementu nga klasa femije');
+    }
+}
+
+class Makina extends Mjeti {
+    constructor(shpejtesia, kapaciteti, konsumNaftes) {
+        super(shpejtesia, kapaciteti);
+        this._konsumNaftes = konsumNaftes; 
+    }
+
+}
+
+let makina = new Makina(120, 5, 0.08); // shpejtesia, kapaciteti, konsumi 
+console.log(`Harxhimi i naftes: ${makina.kalkuloNafeten(150)} litra`); 
+
+//kerkesa e dyte
+
+class Mjeti {
+    constructor(shpejtesia, kapaciteti) {
+        this._shpejtesia = shpejtesia;
+        this._kapaciteti = kapaciteti;
+    }}
+    kalkuloNafeten() {
+        console.log('kalkuloNafeten duhet me u implementu nga klasa femije');
+    }
+    class Kerri extends Mjeti {
+    constructor(shpejtesia, kapaciteti, konsumNaftes) {
+        super(shpejtesia, kapaciteti);
+        this._konsumNaftes = konsumNaftes; 
+    }
+    kalkuloNafeten(distanca){
+        return(distanca/this._konsumNaftes)
+    } 
+}
+
+class Kamion extends Mjeti {
+    constructor(shpejtesia, kapaciteti, konsumNaftes, ngarkesa) {
+        super(shpejtesia, kapaciteti); 
+        this._konsumNaftes = konsumNaftes; 
+        this._ngarkesa = ngarkesa; 
+    }
+    kalkuloNafeten(distanca){
+        return(distanca/this._konsumNaftes*2)
+    } 
+}
+
+
+
+
+
+</script>
+</body>
+</html>

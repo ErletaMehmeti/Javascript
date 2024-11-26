@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Libri {
+    constructor(titulli, autori, vitiPublikimit) {
+        this._titulli = titulli;
+        this._autori = autori;
+        this._vitiPublikimit = vitiPublikimit;
+    }
+
+    get Titulli() {
+        return this._titulli;
+    }
+
+    get Autori() {
+        return this._autori;
+    }
+
+    get VitiPublikimit() { 
+        return this._vitiPublikimit;
+    }
+
+    set autori(autoriRi) {
+        this._autori = autoriRi;
+    }
+
+    set titulli(titulliiRi) {
+        this._titulli = titulliiRi;
+    }
+
+    set vitiPublikimit(vitiiRi) {
+        vitiiRi >= 1800 
+            ? this._vitiPublikimit = vitiiRi 
+            : console.log("viti i ri i publikimit duhet te jete 1800 ose me vone");
+    }
+}
+
+let libri1 = new Libri("Gjenerali i Ushtrisë së Vdekur", "Ismail Kadare", 2003);
+console.log("Titulli:", libri1.titulli);
+console.log("Autori:", libri1.autori);
+console.log("Viti i Publikimit:", libri1.VitiPublikimit); 
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+   class COFFE {
+    _waterAmount = 10; // kjo eshte variabla private
+
+    set waterAmount(value) {
+        if (value < 0) {
+            value = 0; // vendoset ne 0 nëse vlera eshte negative
+        }
+        this._waterAmount = value; // perditesojme _waterAmount
+    }
+
+    get waterAmount() {
+        return this._waterAmount; // marrim vleren e _waterAmount
+    }
+
+    constructor(power) {
+        this._power = power; // inicializojme fuqine
+        this.waterAmount = 0; // fillimisht vendosim sasine e ujit ne 0
+    }
+}
+
+let coffeeMachine = new COFFE(100);
+coffeeMachine.waterAmount = -10; // thirrim setter-in me vlere negative
+console.log(coffeeMachine.waterAmount); // printon 0
+
+
+   </script> 
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class LlogariaEbankes{
+            constructor(bilanciFillestar){
+                let _bilanci=bilanciFillestar;
+               //krijo metoden per depozitimin e parave 
+               //krijo metoden per terheqjen e parave 
+               //krojo metoden per me kontrollu bilancin i llogarise 
+               this.getBilanci=function(){
+                return _bilanci;
+               }
+              this.depozitimi=function(shuma){
+                if(shuma > 0){
+
+                _bilanci += shuma;
+              }
+              else{
+                console.log("shuma e depozitimit duhet me qene pozitive")
+              }}
+            
+             this.terheqja=function(zbritja){
+                 if(zbritja<_bilanci){
+
+                 _bilanci -= zbritja
+        
+             }
+             else{
+                console.log("po terhiqni me shume para se qe keni")
+               }
+ 
+            }
+        }
+    }
+        let llogariaIme=new LlogariaEbankes(100)
+        console.log(llogariaIme.getBilanci())//100
+        llogariaIme.terheqja(30)
+        console.log(llogariaIme.getBilanci())//70
+        llogariaIme.depozitimi(300)
+        console.log(llogariaIme.getBilanci())//370
+    </script>
+</body>
+</html>

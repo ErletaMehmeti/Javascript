@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //krijo metoden kontrolloQasjen e cila duhet te kontrrolloj nese libri eshte ne librari apo jo 
+        //krijo metoden e huazimit te librit nese libri nese gjendet ne librari nese jo duhet te shfaq nje mszh 
+        //krijo metoden ktheLibrin qe mundeson me kthy librin e huazuar
+        class Libraria{
+            constructor(titulli,autori,gjendetNeLibrari){
+                let_.titulli=titulli;
+                let_.autori=autori;
+                let_.gjendetNeLibrari=gjendetNeLibrari;
+           }
+        kontrolloQasjen() {
+        if (this.gjendetNeLibrari) {
+            console.log(`Libri '${this.titulli}' nga autori '${this.autori}' gjendet ne librari.`) ;
+        } else {
+            console.log(`Libri '${this.titulli}' nga autori '${this.autori}' nuk gjendet ne librari.`) ;
+        }
+        }
+        huazoLibrin(){
+            if(this.gjendetNeLibrari){
+            console.log(`Libri'${this.titulli}' nga autori '${this.autori}' u huazua`);
+            this.gjendetNeLibrari = false;
+        } else{
+            console(`Libri'${this.titulli}' nuk mund te merret ne librari sepse nuk gjendet `)
+        }
+        
+    }
+        ktheLibrin() {
+        if (this.gjendetNeLibrari) {
+            console.log(`Libri '${this.titulli}' u kthye ne librari.`);
+            this.gjendetNeLibrari = true;
+        } else {
+            console.log(`Libri '${this.titulli}' ndodhet ne librari.`);
+        }
+    }
+}
+
+libri1.kontrolloQasjen();
+libri1.huazoLibrin();
+libri1.kontrolloQasjen();
+
+</script>
+</body>
+</html>

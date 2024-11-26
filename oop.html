@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class Automjeti{
+            constructor(ngjyra,nrShasise,pesha){
+                this.ngjyra=ngjyra;
+                this.nrShasise=nrShasise;
+                this.pesha=pesha;
+            }
+        }
+      
+        class Personi{
+            constructor(emri,mosha,shkolla){
+                this.emri=emri;
+                this.mosha=mosha;
+                this.shkolla=shkolla;
+            }
+        }
+
+        class student{
+            constructor(ID,name,email,grades,attendance,enrollmentDate,major){
+                this.ID=ID;
+                this.name=name;
+                this.email=email;
+                this.grades=[];
+                this.attendance=[];
+                this.enrollmentDate=[];
+                this.major=major
+                
+            }
+            addGrade(course,grade){
+                this.grades.push({course:course,grade:grade});
+            }
+            markAttendance(date,attendanceStatus){
+                this.attendance.push({date:01/04/2020,attendance:attendanceStatus})
+            }
+            getGrades(){
+                return this.addGrade
+            }
+            getAttendanec(){
+                return this.attendance
+            }
+            removeGrade(course){
+                this.grades=this.grades.filter(grade=>grade.course !== course)
+            }
+            uptadeGrade(course,newGrade){
+                this.grades=this.grades.find(grade => grade.course === course)
+                if(grade){
+                    grade.grade=newGrade
+                }
+             getGrade(course){
+                let grade=this.grades.find(grade => grade.course === course)
+                return grade ? grade.grade:null
+             }
+            }
+          }
+          const.student1=new student.(1,"erleta","erleta@jcoders.com","17/08/2024","shkenca komjuterike")
+          student1.addGrade("TIK",5)
+          student1.addGrade("Matematike",3)
+         
+          student1.markAttendance("18/05/2024","present")
+          console.log(student1.getAttendanec())
+          
+        //get ta merr edhe ta shfaq set ta merr edhe ta ndrron 
+        //filter eshte nje metode !==nese 
+        //operatori ternar perdoret si zevendsimi i if edhe else ?
+
+    </script>
+</body>
+</html>

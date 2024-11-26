@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.Krijo nje klase me emrin Studenti dhe atributet emri, mosha dhe notat (array). 
+    //a.Shto metoden shtoNoten(), gjejNotenMesatare() dhe shfaqInformatat();
+    //b.Krijo disa instanca te klases Studenti dhe testo metodat.
+
+    class Studenti{
+        constructor(emri,mosha){
+        this.emri=emri
+        this.mosha=mosha
+        this.notat=[]
+    }
+    shtoNoten(nota){
+        this.notat.push(nota)
+    }
+    gjejNotenMesatare(){
+       let shuma=0;
+       //notat=[2,2,3,4]
+       for(let nota of this.notat){
+        shuma=nota+shuma;
+       }
+       let mesatarja=shuma/this.notat.length
+       return mesatarja;
+       }
+    
+       shfaqInformatat(){
+       console.log(`emri: ${this.emri}, mosha: ${this.mosha}, Nota mesatare: ${gjejNotenMesatare}`)
+    }
+}
+let studenti1 = new Studenti("Arben", 20);
+studenti1.shtoNoten(8);
+studenti1.shtoNoten(9);
+studenti1.shtoNoten(10);
+studenti1.shfaqInformatat(); 
+
+let studenti2 = new Studenti("Erleta", 21);
+studenti2.shtoNoten(7);
+studenti2.shtoNoten(8);
+studenti2.shtoNoten(9);
+studenti2.shfaqInformatat(); 
+
+let studenti3 = new Studenti("Blerona", 22);
+studenti3.shtoNoten(6);
+studenti3.shtoNoten(5);
+studenti3.shtoNoten(7);
+studenti3.shfaqInformatat(); 
+</script>
+</body>
+</html>

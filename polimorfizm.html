@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    /*class Kafsha{
+        constructor(emri){
+           this.emri=emri
+        }
+        pershendetja(){
+            console.log(`${this.emri} po ju pershendet !`)
+        }
+    }
+    class Qeni extends Kafsha{
+         constructor(emri,mosha){
+            super(emri)
+            this.mosha=mosha
+         }
+         leh(){
+            console.log(`${this.emri} po leh ham ham `)
+         }
+         tregoMoshen(){
+            console.log(`$ {this.emri} ka $(this.mosha) vjet`)
+         }
+    }
+    let qeni1=new Qeni("Bobi",3)
+    qeni1.pershendetja()
+    qeni1.leh()
+    qeni1.tregoMoshen()*/
+   
+
+
+
+
+    class Kafsha{
+  
+        leviz(){
+            console.log(`kafsha po levize`)
+        }
+
+    }
+    class Qeni extends Kafsha{
+        leviz(){
+            console.log(`qeni po vrapon`)
+        }
+        
+    }
+    class Maca extends Kafsha{
+        leviz(){
+            console.log(`maca po ecen`)// method overrding
+        }
+        
+    }
+
+   /*class Car{
+    BMW(){
+        console.log(`origin of bmw is Deutschland`)
+    }
+   }
+   class BMWX1 extends Car{ 
+    BMW(){
+        console.log(`origin of bmw is England`)
+    }
+    
+
+   }
+
+ let kerri=new(Car)
+
+perdore metoden overrding */
+class Car {
+    BMW() {
+        console.log(`Origin of BMW is Deutschland`);
+    }
+}
+
+class BMWX1 extends Car { 
+    BMW() {
+        console.log(`Origin of BMW is England`);
+    }
+}
+
+class CarModel extends BMWX1 {
+    BMW() {
+        console.log(`This is the BMW X1 Sport Model from Italy`);
+    }
+}
+
+let carInstance = new Car();
+carInstance.BMW();  
+
+let bmwX1Instance = new BMWX1();
+bmwX1Instance.BMW(); 
+
+let carModelInstance = new CarModel();
+carModelInstance.BMW();  
+
+
+    //krijo klasen kafsha e cila ka nje metode me emrin lerviz 
+    //mrenda se ciles duhet te thuhet se KAFSHA PO LEVIZ
+    //krijo klasen Qeni i cili ka metoden leviz dhe brenda saj duhet te thuhet 
+    //se qeni po vrapon .....
+</script> 
+</body>
+</html>
